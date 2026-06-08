@@ -1,0 +1,148 @@
+:root {
+  --background: #f4f7fb;
+  --card: #ffffff;
+  --text: #1a1a2e;
+  --primary: #2e86de;
+  --secondary: #8395a7;
+  --correct: #10ac84;
+  --wrong: #ee5253;
+  --border: #dfe4ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, system-ui, sans-serif;
+  background: linear-gradient(180deg, #e9f1ff 0%, #f4f7fb 100%);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.game-shell {
+  width: min(100%, 720px);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+header p {
+  margin: 12px auto 0;
+  color: var(--secondary);
+  max-width: 600px;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 18px 60px rgba(52, 73, 94, 0.08);
+}
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+.category {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.answers {
+  display: grid;
+  gap: 12px;
+}
+
+.answer-btn {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  background: #f7fbff;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.answer-btn:hover {
+  border-color: var(--primary);
+}
+
+.answer-btn.correct {
+  background: #d4f0e9;
+  border-color: #10ac84;
+}
+
+.answer-btn.wrong {
+  background: #f7d7d9;
+  border-color: #ee5253;
+}
+
+.primary-btn,
+.secondary-btn {
+  width: 100%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: var(--primary);
+  color: white;
+}
+
+.secondary-btn {
+  margin-top: 18px;
+  background: white;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.primary-btn:disabled,
+.secondary-btn:disabled,
+.answer-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 560px) {
+  .card {
+    padding: 22px;
+  }
+}
